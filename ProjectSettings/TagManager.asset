@@ -6,6 +6,7 @@ TagManager:
   tags:
   - coins
   - obstacles
+  - LevelUpPanel
   layers:
   - Default
   - TransparentFX

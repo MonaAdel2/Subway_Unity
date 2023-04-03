@@ -26,7 +26,8 @@ public class uiManager : MonoBehaviour
     }
     public void scoreUpdate()
     {
-        score += Time.deltaTime;
+        score +=  Time.deltaTime;
+
         scoreTxt.text = "Score\n" + (int)score;
     }
     public void coinsUpdate()
@@ -69,5 +70,8 @@ public class uiManager : MonoBehaviour
     }
     public void loadCoins(){
         
+    }
+    public float GetScore(){
+        return score;
     }
 }
