@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class uiManager : MonoBehaviour
 {
     private float score = 1, coins = 0;
@@ -12,6 +13,7 @@ public class uiManager : MonoBehaviour
     [SerializeField] GameObject player;
     private playerController controller;
     private bool startPlaying = false;
+    [SerializeField] TMP_Text level ;
     void Start()
     {
         anim = player.GetComponent<Animator>();
@@ -23,6 +25,7 @@ public class uiManager : MonoBehaviour
         {
             scoreUpdate();
         }
+        DisplayLevel();
     }
     public void scoreUpdate()
     {
@@ -65,13 +68,16 @@ public class uiManager : MonoBehaviour
     public void loadScore(){
         s =PlayerPrefs.GetInt("score", 0);
     }
-    public void saveCoins(){
 
-    }
-    public void loadCoins(){
-        
-    }
     public float GetScore(){
         return score;
+    }
+
+    public void exitGame(){
+        Application.Quit();
+    }
+
+    public void DisplayLevel(){
+        level.text = "Level " + Checkpoint.GetCurrentLevel();
     }
 }

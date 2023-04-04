@@ -16,6 +16,7 @@ public class playerController : MonoBehaviour
     public Animator animator;
     float score;
     bool grounded;
+    int MAX_SPEED = 20;
 
 
     void Start()
@@ -61,11 +62,17 @@ public class playerController : MonoBehaviour
 
    public int IncreaseSpeed(int amount){
         speed += amount;
+        speed = Mathf.Clamp(speed, 0, MAX_SPEED);
         return speed;
    }
 
    public void ActivatePanel(){
         panel.SetActive(true);
-        Debug.Log(panel.name);
+        Invoke("DeActivatePanel", 3);
+    }
+
+    public void DeActivatePanel(){
+        panel.SetActive(false);
+    
     }
 }
