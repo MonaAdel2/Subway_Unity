@@ -6,7 +6,6 @@ public class obsController : MonoBehaviour
 {
     [SerializeField] List<ObstacleData> obstacleList;
     
-    [SerializeField] GameObject[] obsPrefab;
     [SerializeField] GameObject obsPoints;
     private List<GameObject> points;
     int counter;
