@@ -43,16 +43,31 @@ public class LevelGenerator : EditorWindow
         else
             Debug.Log("Prefab failed to save" + prefabSuccess);
 
+        GameObject ground = Instantiate(levelData.GroundPrefab , Vector3.zero , levelData.GroundPrefab.transform.rotation,holder.transform);
+        ground.transform.localScale =new Vector3( levelData.gridSize.x, levelData.gridSize.y , 1);
+        PrefabUtility.ApplyAddedGameObject(ground , localPath , InteractionMode.UserAction);
         for (int i = 0; i < levelData.gameObjectsCountInLevel; i++)
         {
             int randomPrefab = Random.Range(0 , levelData.Prefabs.Count);
-            Vector3 pos = Vector3.zero;
-            pos.x = Mathf.Clamp(Random.Range(0 , levelData.gridSize.x) , 0 , levelData.gridSize.x);
-            pos.y = 0;
-            pos.z = Mathf.Clamp(Random.Range(0 , levelData.gridSize.y) , 0 , levelData.gridSize.y);
+           float randomScale =  Random.Range(levelData.objectRandomScaleFactor.x , levelData.objectRandomScaleFactor.y);
+           float randomAngle =  Random.Range(levelData.objectRandomAngle.x , levelData.objectRandomAngle.y);
+
+            Vector3[] pos = new Vector3[2];
+            pos[0].x =Random.Range(-levelData.gridSize.x , -levelData.gridSize.x*0.4f) *0.4f;
+            pos[0].y = 0;
+            pos[0].z = Random.Range(-levelData.gridSize.y , levelData.gridSize.y*1.2f)*0.4f;
+
+            pos[1].x = Random.Range(levelData.gridSize.x*0.85f , levelData.gridSize.x*1.2f) * 0.4f;
+            pos[1].y = 0;
+            pos[1].z = Random.Range(-levelData.gridSize.y , levelData.gridSize.y*1.2f) * 0.4f;
+
             if (levelData.Prefabs[randomPrefab] && levelData.gameObjectsCountInLevel > 0)
             {
-                GameObject spawnedGameObject = Instantiate(levelData.Prefabs[randomPrefab] , pos , Quaternion.identity , holder.transform);
+                GameObject spawnedGameObject = Instantiate(levelData.Prefabs[randomPrefab] , pos[Random.Range(0,2)] , Quaternion.identity , holder.transform);
+                spawnedGameObject.transform.localScale = Vector3.one;
+                spawnedGameObject.transform.localScale *= randomScale;
+                spawnedGameObject.transform.Rotate(Vector3.one * randomAngle);
+
                 PrefabUtility.ApplyAddedGameObject(spawnedGameObject , localPath , InteractionMode.UserAction);
             }
         }
@@ -67,8 +82,11 @@ public class LevelGenerator : EditorWindow
 public class LevelData
 {
     public string levelName;
+    public GameObject GroundPrefab;
     public List<GameObject> Prefabs;
     public Vector2 gridSize;
+    public Vector2 objectRandomScaleFactor;
+    public Vector2 objectRandomAngle;
     public int gameObjectsCountInLevel;
 }
 
