@@ -8,6 +8,7 @@ public class Checkpoint : MonoBehaviour
     [SerializeField] int speedIncreaseAmountPerLevel;
    [SerializeField] public UnityEvent onReachingNextLevel;
     static int levelCounter = 0;
+    public static int ObstacleLevel { get; set; }
     void OnTriggerEnter(Collider other){
         if(other.transform.CompareTag("Player")){
             //MoveToNextLevel
@@ -18,12 +19,12 @@ public class Checkpoint : MonoBehaviour
 
             onReachingNextLevel.Invoke();
             levelCounter++;
+            ObstacleLevel++;
+            Debug.Log(ObstacleLevel);
         }
-
     }
     public static int GetCurrentLevel()
     {
         return levelCounter;
     }
- 
 }

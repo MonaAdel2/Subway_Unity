@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
     IEnumerator GameCoroutine(){
         while(true){
             counter +=1;
-            Debug.Log("Counter modulus 10: "+ counter%5);
-            Debug.Log("playerPosition: "+player.transform.position);
+            //Debug.Log("Counter modulus 5: "+ counter%5);
+            //Debug.Log("playerPosition: "+player.transform.position);
             if(counter%5 == 0){
                 Instantiate(checkPoint,player.transform.position+player.transform.forward * offset,Quaternion.identity);
             }
