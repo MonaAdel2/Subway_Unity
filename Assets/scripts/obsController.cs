@@ -9,7 +9,6 @@ public class obsController : MonoBehaviour
     [SerializeField] GameObject obsPoints;
     private List<GameObject> points;
     int counter;
-    bool getCurrentLevel=true;
     void Start()
     {
         //********
