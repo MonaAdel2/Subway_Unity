@@ -9,6 +9,9 @@ public class playerCollision : MonoBehaviour
     {
         if (c.tag == "coins"){
             ui.coinsUpdate();
+            // new scripts
+            c.GetComponent<AudioSource>().Play();
+            
             Destroy(c.gameObject);
         } 
     }
