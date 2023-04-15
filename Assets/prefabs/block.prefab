@@ -809,10 +809,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9606bf4710f43064eba7a748b905610d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obsPrefab:
-  - {fileID: 5954811877910295482, guid: 0a0ecbb6c6f1e2746bc9c8d5e01c405c, type: 3}
-  - {fileID: 5380314234374672497, guid: 44754ef2ccda9d742886bd8a069ae439, type: 3}
-  - {fileID: 4859693537663576866, guid: c028a07ab78c0e14c925dee14edd7992, type: 3}
+  obstacleList:
+  - name: Level1
+    ObstaclesPrefab:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - name: Level2
+    ObstaclesPrefab:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - name: Level3
+    ObstaclesPrefab:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - name: Level4
+    ObstaclesPrefab:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   obsPoints: {fileID: 5855491385641093865}
 --- !u!114 &6895690176141335483
 MonoBehaviour:
