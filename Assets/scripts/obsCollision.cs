@@ -5,7 +5,12 @@ using UnityEngine;
 public class obsCollision : MonoBehaviour
 {
   public uiManager ui;
-
+    public enum DieAnimation
+    {
+        die1,
+        die2
+    }
+    public DieAnimation dieAnimation;
     private void Start()
     {
      // ui = transform.parent.GetComponent<ObsParent>().uiManager;
@@ -14,7 +19,14 @@ public class obsCollision : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
       other.GetComponent<playerController>().enabled = false;
-      other.GetComponent<Animator>().SetTrigger("die");
+        if (dieAnimation==DieAnimation.die1)
+        {
+          other.GetComponent<Animator>().SetTrigger("Die1");
+        }else if(dieAnimation == DieAnimation.die2)
+        {
+            other.GetComponent<Animator>().SetTrigger("Die2");
+        }
+        other.transform.Translate(other.transform.up * 1f);
       //ui.gameOver();
     }
 }
