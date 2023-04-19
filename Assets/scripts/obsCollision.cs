@@ -5,6 +5,7 @@ using UnityEngine;
 public class obsCollision : MonoBehaviour
 {
   public uiManager ui;
+    bool isDead=true;
     public enum DieAnimation
     {
         die1,
@@ -18,15 +19,21 @@ public class obsCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-      other.GetComponent<playerController>().enabled = false;
-        if (dieAnimation==DieAnimation.die1)
+        if (isDead)
         {
-          other.GetComponent<Animator>().SetTrigger("Die1");
-        }else if(dieAnimation == DieAnimation.die2)
-        {
-            other.GetComponent<Animator>().SetTrigger("Die2");
+            other.GetComponent<playerController>().enabled = false;
+            if (dieAnimation == DieAnimation.die1)
+            {
+                other.GetComponent<Animator>().SetTrigger("Die1");
+            }
+            else if (dieAnimation == DieAnimation.die2)
+            {
+                other.GetComponent<Animator>().SetTrigger("Die2");
+            }
+
+            other.transform.Translate(other.transform.up * 1f);
+            isDead = false;
         }
-        other.transform.Translate(other.transform.up * 1f);
       //ui.gameOver();
     }
 }

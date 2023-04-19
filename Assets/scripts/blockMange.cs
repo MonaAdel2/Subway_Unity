@@ -6,11 +6,15 @@ public class blockMange : MonoBehaviour
 {
     //public uiManager uiManager;
 
-    [SerializeField] GameObject lastBlock, blockPrefab;
+    [SerializeField] GameObject lastBlock;
+    [SerializeField] List<GameObject>blockPrefab;
+
+    [SerializeField] float offset=30;
 
     public void createBlock(GameObject block)
     {
-        lastBlock = Instantiate(blockPrefab, new Vector3(0, 0, lastBlock.transform.position.z + 30), Quaternion.identity, transform);
+        int randomBlock = Random.Range(0 , blockPrefab.Count);
+        lastBlock = Instantiate(blockPrefab[randomBlock], new Vector3(0, 0, lastBlock.transform.position.z + offset), Quaternion.identity, transform);
         StartCoroutine(destroyBlock(block));
     }
 

@@ -6,6 +6,6 @@ public class block : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-       transform.parent.parent.GetComponent<blockMange>().createBlock(transform.parent.gameObject);
+      FindObjectOfType<blockMange>().createBlock(transform.parent.gameObject);
     }
 }
