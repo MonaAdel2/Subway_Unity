@@ -17,6 +17,7 @@ public class coin : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             audioSource.PlayOneShot(clip,volume);
+            Debug.Log(audioSource.clip.name);
         }
     }
 }
