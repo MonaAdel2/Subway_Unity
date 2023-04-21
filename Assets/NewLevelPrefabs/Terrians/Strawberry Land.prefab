@@ -201,6 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5356100227499452481}
+  - component: {fileID: 1634915554560268969}
   m_Layer: 0
   m_Name: Strawberry Land
   m_TagString: Untagged
@@ -242,6 +243,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1634915554560268969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994878333103356272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9606bf4710f43064eba7a748b905610d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleList:
+  - name: Level1
+    ObstaclesPrefab:
+    - {fileID: 3315204248936033776, guid: 06637653cf735284b8541c922324f268, type: 3}
+    - {fileID: 6423169345861728834, guid: 06c3126a529c20c41a6e23a9ee8e4be5, type: 3}
+    - {fileID: 6164462959637646473, guid: 0166efdd296b6de4cbeb3e1742d3bf2d, type: 3}
+  - name: Level2
+    ObstaclesPrefab:
+    - {fileID: 8568629353212882391, guid: 104d3bec23a69cd4fa674cb66dfcb403, type: 3}
+    - {fileID: 2576956875243640359, guid: dbd986f7d8609b647a89b7b00b0a5448, type: 3}
+    - {fileID: 2799691876098940129, guid: 6b7d12ee963027746bd731d06775f07f, type: 3}
+  - name: Level3
+    ObstaclesPrefab:
+    - {fileID: 8406973990442642529, guid: fc2d05a573be92a48bb5519bb4368dbe, type: 3}
+    - {fileID: 8406973990442642529, guid: 7547868a42311f84b9a31f63bc327efa, type: 3}
+    - {fileID: 3513482753519261044, guid: a3fa93b993970f044bb601d11ba5b595, type: 3}
+  obsPoints: {fileID: 6622117532106770411}
+  parentPoints:
+  - {fileID: 1422457066865742881}
+  - {fileID: 1609494167787434161}
+  - {fileID: 7725197371582413671}
+  - {fileID: 7352311522652421144}
+  - {fileID: 2197053397538376613}
+  enemy1Speed: 1
+  sawSpeed: 1
+  chocoOffset: {x: 1, y: 1, z: 0}
+  staticObjectOffset: 0
 --- !u!1 &3001300200885180300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,6 +1528,16 @@ PrefabInstance:
 --- !u!4 &356714738927137271 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5817535955609372555, guid: c7bcc7ae5f2743041860a46e494ecaf0, type: 3}
+  m_PrefabInstance: {fileID: 6075149237552494204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1422457066865742881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5184436061644513885, guid: c7bcc7ae5f2743041860a46e494ecaf0, type: 3}
+  m_PrefabInstance: {fileID: 6075149237552494204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6622117532106770411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1128495596631585175, guid: c7bcc7ae5f2743041860a46e494ecaf0, type: 3}
   m_PrefabInstance: {fileID: 6075149237552494204}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6104592039385417155

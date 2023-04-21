@@ -80,7 +80,7 @@ public class obsController : MonoBehaviour
         Transform enemyTransform = Enemy1Functionality(enemy , points , speed,out direction);
         while (true)
         {
-            if (Vector3.Distance(enemyTransform.position,points[2].position)<0.1f || Vector3.Distance(enemyTransform.position , points[0].position) < 0.1f)
+            if (Vector3.Distance(enemyTransform.position,points[2].position)<0.5f || Vector3.Distance(enemyTransform.position , points[0].position) < 0.5f)
             {
                 direction *= -1;
             }

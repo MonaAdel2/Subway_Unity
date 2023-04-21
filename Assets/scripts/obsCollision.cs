@@ -5,7 +5,7 @@ using UnityEngine;
 public class obsCollision : MonoBehaviour
 {
   public uiManager ui;
-    bool isDead=true;
+   bool isDead=true;
     public enum DieAnimation
     {
         die1,
@@ -21,6 +21,7 @@ public class obsCollision : MonoBehaviour
     {
         if (isDead)
         {
+            FindObjectOfType<SoundEffectsManager>().playDeathSound();
             other.GetComponent<playerController>().enabled = false;
             if (dieAnimation == DieAnimation.die1)
             {

@@ -63,8 +63,19 @@ MonoBehaviour:
   obstacleList:
   - name: Level1
     ObstaclesPrefab:
-    - {fileID: 3315204248936033776, guid: 06637653cf735284b8541c922324f268, type: 3}
+    - {fileID: 3315204248936033776, guid: 0fc70fb4a0bb59a4aa9aae47c0a23c4a, type: 3}
+    - {fileID: 7318147264639977352, guid: 4f5224abac4a2b547a5f65559a239764, type: 3}
+    - {fileID: 6164462959637646473, guid: 0166efdd296b6de4cbeb3e1742d3bf2d, type: 3}
+  - name: Level2
+    ObstaclesPrefab:
+    - {fileID: 8568629353212882391, guid: 104d3bec23a69cd4fa674cb66dfcb403, type: 3}
     - {fileID: 2576956875243640359, guid: dbd986f7d8609b647a89b7b00b0a5448, type: 3}
+    - {fileID: 2799691876098940129, guid: 6b7d12ee963027746bd731d06775f07f, type: 3}
+  - name: Level3
+    ObstaclesPrefab:
+    - {fileID: 8406973990442642529, guid: fc2d05a573be92a48bb5519bb4368dbe, type: 3}
+    - {fileID: 8406973990442642529, guid: 7547868a42311f84b9a31f63bc327efa, type: 3}
+    - {fileID: 3513482753519261044, guid: a3fa93b993970f044bb601d11ba5b595, type: 3}
   obsPoints: {fileID: 1311333303894948815}
   parentPoints:
   - {fileID: 6514777180056496133}
@@ -73,7 +84,7 @@ MonoBehaviour:
   - {fileID: 2133565433644338176}
   - {fileID: 2133565434800395046}
   enemy1Speed: 1
-  sawSpeed: 3
+  sawSpeed: 1
   chocoOffset: {x: 1, y: 1, z: 0}
   staticObjectOffset: 0
 --- !u!1 &2133565433048569849

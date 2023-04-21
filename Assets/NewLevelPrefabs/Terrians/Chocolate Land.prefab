@@ -511,6 +511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6366879822642260036}
+  - component: {fileID: 20275452685338602}
   m_Layer: 0
   m_Name: Chocolate Land
   m_TagString: Untagged
@@ -552,6 +553,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &20275452685338602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7743702639547145324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9606bf4710f43064eba7a748b905610d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleList:
+  - name: Level1
+    ObstaclesPrefab:
+    - {fileID: 3315204248936033776, guid: 3632b719f69a12748832da0c63beb31e, type: 3}
+    - {fileID: 7318147264639977352, guid: 4f5224abac4a2b547a5f65559a239764, type: 3}
+  - name: Level2
+    ObstaclesPrefab:
+    - {fileID: 2799691876098940129, guid: 6b7d12ee963027746bd731d06775f07f, type: 3}
+    - {fileID: 6164462959637646473, guid: 79f722cfcccadbe45bee6284816d9d7f, type: 3}
+    - {fileID: 6423169345861728834, guid: 06c3126a529c20c41a6e23a9ee8e4be5, type: 3}
+  - name: Level3
+    ObstaclesPrefab:
+    - {fileID: 8406973990442642529, guid: f4581ea9e94b506469d8416fa4a96e73, type: 3}
+    - {fileID: 8406973990442642529, guid: 7547868a42311f84b9a31f63bc327efa, type: 3}
+    - {fileID: 3513482753519261044, guid: a3fa93b993970f044bb601d11ba5b595, type: 3}
+  obsPoints: {fileID: 3781461671262791516}
+  parentPoints:
+  - {fileID: 8944600484216648854}
+  - {fileID: 9035990760989559330}
+  - {fileID: 2741423973842252955}
+  - {fileID: 5888906242604422583}
+  - {fileID: 3500191721569216455}
+  enemy1Speed: 1
+  sawSpeed: 1
+  chocoOffset: {x: 1, y: 1, z: 0}
+  staticObjectOffset: 0
 --- !u!1 &7866330062633801852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,9 +1248,19 @@ PrefabInstance:
       objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7bcc7ae5f2743041860a46e494ecaf0, type: 3}
+--- !u!1 &3781461671262791516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1128495596631585175, guid: c7bcc7ae5f2743041860a46e494ecaf0, type: 3}
+  m_PrefabInstance: {fileID: 4310872413531199179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7741478576400503104 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5817535955609372555, guid: c7bcc7ae5f2743041860a46e494ecaf0, type: 3}
+  m_PrefabInstance: {fileID: 4310872413531199179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8944600484216648854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5184436061644513885, guid: c7bcc7ae5f2743041860a46e494ecaf0, type: 3}
   m_PrefabInstance: {fileID: 4310872413531199179}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4320723062146957378
