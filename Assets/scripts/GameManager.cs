@@ -8,24 +8,29 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] GameObject checkPoint;
     [SerializeField] float offset;
-    [SerializeField] float distanceToChangeLevelAt = 5;
-    Vector3 startingPos;
+    [SerializeField] int levelUpAtBlock = 5;
+    bool PassedTheLevelUpCheckpoint = true;
+    float startingPos;
+    public static float distance;
     private void Start()
     {
-        startingPos = player.position;    
+        startingPos = player.position.z;
+        Checkpoint.ObstacleLevel = 0;
+        Checkpoint.levelCounter = 1;
     }
     public void StartCounting(){
         StartCoroutine(GameCoroutine());
     }
     IEnumerator GameCoroutine(){
         while(true){
-            float distance = Vector3.Distance(player.position,startingPos);
-            //Debug.Log("Counter modulus 5: "+ counter%5);
-            //Debug.Log("playerPosition: "+player.transform.position);
-            if((int)distance%distanceToChangeLevelAt== 0){
+            distance = player.position.z - startingPos;
+            if(distance > 1 && (int)distance%levelUpAtBlock== 0 && PassedTheLevelUpCheckpoint){
                 Instantiate(checkPoint,player.transform.position+player.transform.forward * offset,Quaternion.identity);
+                PassedTheLevelUpCheckpoint = false;
+                Debug.Log("distance : " +distance);
             }
-        yield return new WaitForSeconds(1);
+            PassedTheLevelUpCheckpoint = true;
+            yield return new WaitForSeconds(Time.deltaTime*5);
         }
     }
 }

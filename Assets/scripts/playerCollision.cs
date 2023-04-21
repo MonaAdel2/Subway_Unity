@@ -11,8 +11,6 @@ public class playerCollision : MonoBehaviour
             ui.coinsUpdate();
             // new scripts
             c.GetComponent<AudioSource>().Play();
-            
-            Destroy(c.gameObject);
         } 
     }
 }

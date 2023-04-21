@@ -7,7 +7,7 @@ using TMPro;
 public class uiManager : MonoBehaviour
 {
     private float score = 1, coins = 0;
-    [SerializeField] Text scoreTxt, coinsTxt;
+    [SerializeField] TMP_Text scoreTxt, coinsTxt;
     [SerializeField] GameObject startPanel, gamePanel, gameOverPanel;
     private Animator anim;
     [SerializeField] GameObject player;
@@ -29,8 +29,7 @@ public class uiManager : MonoBehaviour
     }
     public void scoreUpdate()
     {
-        score +=  Time.deltaTime;
-
+        score = GameManager.distance;
         scoreTxt.text = "Score\n" + (int)score;
     }
     public void coinsUpdate()

@@ -36,14 +36,14 @@ public class playerController : MonoBehaviour
         Vector3 direction = new Vector3(x, 0, 1);
         score = ui.GetScore();
         controller.Move(direction * speed * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            jump();
-        }
+       
         if (grounded && velocity.y < 0)
         {
             velocity.y = -2;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                jump();
+            }
         }
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -53,6 +53,7 @@ public class playerController : MonoBehaviour
     {
         animator.SetTrigger("jump");
         velocity.y = Mathf.Sqrt(gravity * -2 * jumpHeight);
+        FindObjectOfType<SoundEffectsManager>().playJumpSound();
     }
 
     void gameOver()
