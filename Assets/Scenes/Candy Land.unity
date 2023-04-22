@@ -434,6 +434,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1387502603}
     m_Modifications:
+    - target: {fileID: 2145936758, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2133565432821419429, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1511,6 +1515,7 @@ MonoBehaviour:
   checkPoint: {fileID: 4168111174757859334, guid: 3587d480825600241afdbe7a19147cb4, type: 3}
   offset: 6
   levelUpAtBlock: 100
+  LevelUpThreshold: 0.3
 --- !u!4 &1217980993
 Transform:
   m_ObjectHideFlags: 0
@@ -3393,6 +3398,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1387502603}
     m_Modifications:
+    - target: {fileID: 2145936758, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2133565432821419429, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
       propertyPath: m_RootOrder
       value: 0
