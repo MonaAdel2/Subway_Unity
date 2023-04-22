@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject checkPoint;
     [SerializeField] float offset;
     [SerializeField] int levelUpAtBlock = 5;
-    bool PassedTheLevelUpCheckpoint = true;
     float startingPos;
     public static float distance;
+    [SerializeField] float LevelUpThreshold = .3f;
     private void Start()
     {
         startingPos = player.position.z;
@@ -24,13 +24,13 @@ public class GameManager : MonoBehaviour
     IEnumerator GameCoroutine(){
         while(true){
             distance = player.position.z - startingPos;
-            if(distance > 1 && (int)distance%levelUpAtBlock== 0 && PassedTheLevelUpCheckpoint){
+            float mod = distance % levelUpAtBlock;
+            bool passedTheLevelUpThreshold = mod > 0 && mod <= LevelUpThreshold;
+            if (distance > 1 && passedTheLevelUpThreshold ){
                 Instantiate(checkPoint,player.transform.position+player.transform.forward * offset,Quaternion.identity);
-                PassedTheLevelUpCheckpoint = false;
                 Debug.Log("distance : " +distance);
             }
-            PassedTheLevelUpCheckpoint = true;
-            yield return new WaitForSeconds(Time.deltaTime*5);
+            yield return null;
         }
     }
 }
