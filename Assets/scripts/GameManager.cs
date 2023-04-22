@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
             bool passedTheLevelUpThreshold = mod > 0 && mod <= LevelUpThreshold;
             if (distance > 1 && passedTheLevelUpThreshold ){
                 Instantiate(checkPoint,player.transform.position+player.transform.forward * offset,Quaternion.identity);
-                Debug.Log("distance : " +distance);
             }
             yield return null;
         }
