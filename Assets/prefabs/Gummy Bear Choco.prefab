@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3970714742127370466}
   - component: {fileID: 8885163302939211557}
   m_Layer: 0
-  m_Name: Gummy Bear
+  m_Name: Gummy Bear Choco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 3315678748536746614}
   - component: {fileID: 7047164721153496114}
   - component: {fileID: 7698610049843462590}
-  - component: {fileID: 5755441822521261511}
+  - component: {fileID: 2762048797654578761}
   m_Layer: 0
   m_Name: Gummy_Bear
   m_TagString: Untagged
@@ -123,7 +123,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4bd68ee8353903d4a9db758194dcb878, type: 2}
+  - {fileID: 2100000, guid: d8515c208da0a224f9cceac6f5045ab3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,7 +145,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5755441822521261511
+--- !u!95 &2762048797654578761
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0

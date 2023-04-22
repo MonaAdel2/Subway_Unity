@@ -401,6 +401,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gameOverPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 8096716430996312803, guid: 6ee5bb19713f8584994011a839c1b3c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ee5bb19713f8584994011a839c1b3c2, type: 3}
 --- !u!224 &44549629 stripped
@@ -570,6 +574,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 678908895628583744, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -63.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 955927920277084929, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -66.48001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914874960210907327, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 37.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2133565432821419429, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -621,6 +637,14 @@ PrefabInstance:
     - target: {fileID: 2133565432821419430, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030998255284226224, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193316701233818195, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -69.32001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
@@ -1446,8 +1470,8 @@ MonoBehaviour:
   player: {fileID: 1484647410}
   checkPoint: {fileID: 4168111174757859334, guid: 3587d480825600241afdbe7a19147cb4, type: 3}
   offset: 6
-  levelUpAtBlock: 100
-  LevelUpThreshold: 0.3
+  levelUpAtBlock: 300
+  LevelUpThreshold: 0.2
 --- !u!4 &1217980993
 Transform:
   m_ObjectHideFlags: 0
@@ -3274,6 +3298,10 @@ PrefabInstance:
     - target: {fileID: 2145936758, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914874960210907327, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 36.8
       objectReference: {fileID: 0}
     - target: {fileID: 2133565432821419429, guid: e0677431b1cdb0f4fb06998b5e504639, type: 3}
       propertyPath: m_RootOrder

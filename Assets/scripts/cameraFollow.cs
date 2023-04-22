@@ -10,7 +10,7 @@ public class cameraFollow : MonoBehaviour
     {
         distance = transform.position - playerTransform.position;
     }
-    void Update()
+    void LateUpdate()
     {
         transform.position = new Vector3( transform.position.x, 
         playerTransform.position.y + distance.y, 
