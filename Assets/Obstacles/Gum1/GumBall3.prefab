@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3a0a85a65573d1c44830bd8f5a7d3573, type: 2}
+  - {fileID: 2100000, guid: 74dd02d81ab7c5f4eb1dac548d6bad1b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -143,7 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875366315100045230}
   m_Layer: 0
-  m_Name: GumBall
+  m_Name: GumBall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
