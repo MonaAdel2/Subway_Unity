@@ -24,7 +24,7 @@ public class obsController : MonoBehaviour
     {
         //********
         counter = Checkpoint.ObstacleLevel;
-        if (counter >= obstacleList.Count)
+        if (counter > obstacleList.Count)
         {
             Checkpoint.ObstacleLevel = 0;
         }
@@ -77,11 +77,17 @@ public class obsController : MonoBehaviour
     private IEnumerator EnemyCoroutine( Transform enemy , List<Transform> points , float speed )
     {
         Vector3 direction;
+     
         Transform enemyTransform = Enemy1Functionality(enemy , points , speed,out direction);
         while (true)
         {
-            if (Vector3.Distance(enemyTransform.position,points[2].position)<0.5f || Vector3.Distance(enemyTransform.position , points[0].position) < 0.5f)
+            Vector3 enemyPos = new Vector3(enemy.position.x , 0 , enemy.position.z);
+            Vector3 point0Pos = new Vector3(points[0].position.x , 0 , points[0].position.z);
+            Vector3 point2Pos = new Vector3(points[2].position.x , 0 , points[2].position.z);
+            Vector2 Threshold = new Vector3(0.49f , 0.5f);
+            if (Vector3.Distance(enemyPos , point2Pos) <Threshold.y && Vector3.Distance(enemyPos , point2Pos)>Threshold.x || Vector3.Distance(enemyPos , point0Pos) < Threshold.y && Vector3.Distance(enemyPos , point0Pos) > Threshold.x)
             {
+                Debug.Log("ChangeDirection");
                 direction *= -1;
             }
             enemyTransform.Translate(direction * speed * Time.deltaTime);
@@ -92,11 +98,16 @@ public class obsController : MonoBehaviour
     Transform Enemy1Functionality(Transform enemy, List<Transform> points,float speed,out Vector3 directionf)
     {
         directionf = Vector3.zero;
-        if (enemy.position ==  points[0].position)
+        Vector3 enemyPos = new Vector3(enemy.position.x , 0 , enemy.position.z);
+        Vector3 point0Pos = new Vector3(points[0].position.x , 0 , points[0].position.z);
+        Vector3 point1Pos = new Vector3(points[1].position.x , 0 , points[1].position.z);
+        Vector3 point2Pos = new Vector3(points[2].position.x , 0 , points[2].position.z);
+        float threshold = 0.1f;
+        if (Vector3.Distance(enemyPos , point0Pos) <=threshold)
         {
             directionf = enemy.right;
         }
-        else if(enemy.position == points[1].position)
+        else if(Vector3.Distance(enemyPos , point1Pos) <= threshold)
         {
             int randomMultiplier = Random.Range(0 , 2);
             if (randomMultiplier == 0)
@@ -108,11 +119,10 @@ public class obsController : MonoBehaviour
                 directionf = -enemy.right;
             }
         }
-        else if (enemy.position == points[2].position)
+        else if (Vector3.Distance(enemyPos , point2Pos) <= threshold)
         {
             directionf = -enemy.right;
         }
-        Debug.Log(" value: " + directionf);
 
         return enemy;
     }
